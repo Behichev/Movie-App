@@ -66,6 +66,7 @@ extension ViewController: UITableViewDataSource {
                 detailsStoryboard.filmName = item.originalName ?? "None"
                 detailsStoryboard.filmDescription = item.overview ?? "None"
                 detailsStoryboard.filmData = "Realese date: " + (item.firstAirDate ?? "No data")
+                detailsStoryboard.isFromNetwork = true
                 
                 if item.voteAverage == 0.0 {
                     detailsStoryboard.filmRating = "No ratings yet"

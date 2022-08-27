@@ -32,10 +32,10 @@ class DetailMediaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addToWatchLaterListButton.titleLabel?.text = "Remove"
         setupColors()
         setupContent()
         setupButton()
+        
         //View with media trailer
         playerView.load(withVideoId: filmTrailer, playerVars: ["playinline":1])
         
@@ -57,7 +57,7 @@ class DetailMediaViewController: UIViewController {
     }
     func setupButton() {
         if isFromNetwork == false {
-            addToWatchLaterListButton.titleLabel?.text = "Remove from watch list"
+            addToWatchLaterListButton.titleLabel?.text = "Remove"
         }
     }
     //MARK: - Actions
