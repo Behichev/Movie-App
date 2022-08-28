@@ -35,10 +35,8 @@ class DetailMediaViewController: UIViewController {
         setupColors()
         setupContent()
         setupButton()
-        
         //View with media trailer
         playerView.load(withVideoId: filmTrailer, playerVars: ["playinline":1])
-        
     }
     
     func setupColors() {

@@ -19,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if #available (iOS 13.0, *) {
             window?.overrideUserInterfaceStyle = .light
         }
+        
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
