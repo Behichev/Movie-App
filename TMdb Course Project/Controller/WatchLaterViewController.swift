@@ -8,25 +8,33 @@
 import UIKit
 
 class WatchLaterViewController: UIViewController {
-    //MARK: - Constants
+    //MARK: - Data
     var moviesArray: [Media] = []
     //MARK: - Outlets
     @IBOutlet weak var watchLaterTableView: UITableView!
     //MARK: - ViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupInterface()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        fetchResult()
+    }
+    //MARK: - Functions
+    func fetchResult() {
+        moviesArray = DataManager().getMedia()
+        watchLaterTableView.reloadData()
+    }
+    
+    private func setupInterface() {
         //register protocols
         watchLaterTableView.delegate = self
         watchLaterTableView.dataSource = self
         //setup colors
-        view.backgroundColor = ViewController().blueBackgroundColor
+        view.backgroundColor = Constants.Colors.blueBackgroundColor
         watchLaterTableView.separatorStyle = .none
-        watchLaterTableView.backgroundColor = ViewController().blueBackgroundColor
+        watchLaterTableView.backgroundColor = Constants.Colors.blueBackgroundColor
         watchLaterTableView.showsVerticalScrollIndicator = false
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        moviesArray = DataManager().getMedia()
-        watchLaterTableView.reloadData()
     }
 }
 

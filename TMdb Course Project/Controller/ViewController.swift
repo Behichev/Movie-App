@@ -13,17 +13,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableViewMain: UITableView!
     @IBOutlet weak var navBar: UINavigationItem!
-    //MARK: - Colors
-    let blueBackgroundColor = UIColor(r: 49, g: 54, b: 76, a: 1)
-    let blueHeaderColor = UIColor(r: 14, g: 17, b: 40, a: 1)
     //MARK: - Data
     var arrayMovies: [Result] = []
-    var actors: [Result] = []
     //MARK: - ViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupInterface()
-        //Network request
+        networkRequest()
+
+    }
+    //MARK: - Functions
+    func networkRequest() {
         ApiManager.shared.getTrandingMovies { show in
             self.arrayMovies = show.results ?? []
             DispatchQueue.main.async {
@@ -31,18 +31,17 @@ class ViewController: UIViewController {
             }
         }
     }
-    //MARK: - Functions
-    func setupInterface() {
+    private func setupInterface() {
         //Setup Background
-        view.backgroundColor = blueBackgroundColor
+        view.backgroundColor = Constants.Colors.blueBackgroundColor
         //Setup Table View
         tableViewMain.delegate = self
         tableViewMain.dataSource = self
         tableViewMain.separatorStyle = .none
-        tableViewMain.backgroundColor = blueBackgroundColor
+        tableViewMain.backgroundColor = Constants.Colors.blueBackgroundColor
         tableViewMain.showsVerticalScrollIndicator = false
         //Setup Segmented Control
-        segmentedControl.tintColor = blueBackgroundColor
+        segmentedControl.tintColor = Constants.Colors.blueBackgroundColor
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.opaqueSeparator],
                                                 for: UIControl.State.normal)
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black],

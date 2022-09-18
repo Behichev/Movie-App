@@ -19,6 +19,7 @@ enum ApiType {
     var baseURL: String {
         return "https://api.themoviedb.org/3/"
     }
+    
     var path: String {
         switch self {
         case .getTrandingMovies: return "trending/movie/week?api_key=4f8afb35881a873ad0abc5c32dcfbcb1"
@@ -32,6 +33,7 @@ enum ApiType {
         case .getTVtrailer(TVid: let TVid): return "https://api.themoviedb.org/3/tv/\(TVid)/videos?api_key=4f8afb35881a873ad0abc5c32dcfbcb1&language=en-US"
         }
     }
+    
     var request: URLRequest {
         let url = URL(string: path, relativeTo: URL(string: baseURL))!
         let request = URLRequest(url: url)
@@ -51,6 +53,7 @@ class ApiManager {
         }
         task.resume()
     }
+    
     func getTrandingShows(complition: @escaping (TrandingMovies) -> Void) {
         let request = ApiType.getTrandingShows.request
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -60,6 +63,7 @@ class ApiManager {
         }
         task.resume()
     }
+   
     func searchMovie(search: String, complition: @escaping (TrandingMovies) -> Void) {
         let request = ApiType.searchMovie(search: search).request
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -69,6 +73,7 @@ class ApiManager {
         }
         task.resume()
     }
+   
     func searchShow(search: String, complition: @escaping (TrandingMovies) -> Void) {
         let request = ApiType.searchTV(search: search).request
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -78,6 +83,7 @@ class ApiManager {
         }
         task.resume()
     }
+   
     func getMovieTrailer(movieID: Int, complition: @escaping (movieTrailerModel) -> Void) {
         let request = ApiType.getMovieTrailer(movieID: movieID).request
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -88,6 +94,7 @@ class ApiManager {
         }
         task.resume()
     }
+  
     func getTVtrailer(TVid: Int, complition: @escaping (movieTrailerModel) -> Void) {
         let request = ApiType.getTVtrailer(TVid: TVid).request
         let task = URLSession.shared.dataTask(with: request) { data, response, error in

@@ -16,9 +16,8 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     func configure(withModelMovie movie: Result) {
         self.movieNameLabel.text = movie.title
         self.mediaTypeLabel.text = movie.overview
-        let responseURL = "https://image.tmdb.org/t/p/w300/"
         guard let posterPath = movie.posterPath else { return }
-        guard let imageURL: URL = URL(string: responseURL + posterPath) else { return }
+        guard let imageURL: URL = URL(string: Constants.imageURLpath + posterPath) else { return }
         moviePoster.sd_setImage(with: imageURL)
         moviePoster.layer.cornerRadius = 24
     }
@@ -26,9 +25,8 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     func configure(withModelShow show: Result) {
         self.movieNameLabel.text = show.name
         self.mediaTypeLabel.text = show.overview
-        let responseURL = "https://image.tmdb.org/t/p/w300/"
         guard let posterPath = show.posterPath else { return }
-        guard let imageURL: URL = URL(string: responseURL + posterPath) else { return }
+        guard let imageURL: URL = URL(string: Constants.imageURLpath + posterPath) else { return }
         moviePoster.sd_setImage(with: imageURL)
         moviePoster.layer.cornerRadius = 24
     }

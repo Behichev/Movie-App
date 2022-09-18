@@ -20,7 +20,7 @@ class MainScreenTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        mainContentViewBackground.backgroundColor = ViewController().blueBackgroundColor
+        mainContentViewBackground.backgroundColor = Constants.Colors.blueBackgroundColor
         backgroundViewCell.layer.cornerRadius = 16
     }
     //MARK: DB Movie Cell
@@ -33,9 +33,8 @@ class MainScreenTableViewCell: UITableViewCell {
             self.ratingMediaLabel.text = "Rating: " + String(describing: Int(dbFile.rating)) + "\\10"
         }
         self.mediaOverviewLabel.text = dbFile.mediaDescription
-        let responseURL = "https://image.tmdb.org/t/p/w1280/"
         let posterPath = dbFile.posterPath
-        guard let imageURL: URL = URL(string: responseURL + posterPath) else { return }
+        guard let imageURL: URL = URL(string: Constants.imageURLpath + posterPath) else { return }
         showPosterImageView.sd_setImage(with: imageURL)
         showPosterImageView.layer.cornerRadius = 8
     }
@@ -50,9 +49,8 @@ class MainScreenTableViewCell: UITableViewCell {
             self.ratingMediaLabel.text = "Rating: " + String(describing: Int(movie.voteAverage ?? 0)) + "\\10"
         }
         self.mediaOverviewLabel.text = movie.overview
-        let responseURL = "https://image.tmdb.org/t/p/w1280/"
         guard let posterPath = movie.posterPath else { return }
-        guard let imageURL: URL = URL(string: responseURL + posterPath) else { return }
+        guard let imageURL: URL = URL(string: Constants.imageURLpath + posterPath) else { return }
         showPosterImageView.sd_setImage(with: imageURL)
         showPosterImageView.layer.cornerRadius = 8
     }
@@ -66,9 +64,8 @@ class MainScreenTableViewCell: UITableViewCell {
             self.ratingMediaLabel.text = "Rating: " + String(describing: Int(show.voteAverage ?? 0)) + "\\10"
         }
         self.mediaOverviewLabel.text = show.overview
-        let responseURL = "https://image.tmdb.org/t/p/w1280/"
         guard let posterPath = show.posterPath else { return }
-        guard let imageURL: URL = URL(string: responseURL + posterPath) else { return }
+        guard let imageURL: URL = URL(string: Constants.imageURLpath + posterPath) else { return }
         showPosterImageView.sd_setImage(with: imageURL)
         showPosterImageView.layer.cornerRadius = 8
     }

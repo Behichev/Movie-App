@@ -11,7 +11,7 @@ class SearchViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var searchResultsCollectionView: UICollectionView!
     @IBOutlet weak var searchSegmentedControl: UISegmentedControl!
-    
+    //MARK: - Data
     let searchController = UISearchController()
     var searchResult: [Result] = []
     //MARK: - View Controller Lifecycle
@@ -20,7 +20,7 @@ class SearchViewController: UIViewController {
         setupInterface()
     }
     //MARK: - Functions
-    func setupInterface() {
+    private func setupInterface() {
         //register Protocols
         searchController.searchResultsUpdater = self
         searchController.delegate = self
@@ -32,13 +32,15 @@ class SearchViewController: UIViewController {
         navigationItem.searchController?.searchBar.tintColor = .systemYellow
         searchController.searchBar.searchTextField.textColor = .white
         //setup Collection View
-        searchResultsCollectionView.backgroundColor = ViewController().blueBackgroundColor
+        searchResultsCollectionView.backgroundColor = Constants.Colors.blueBackgroundColor
         searchResultsCollectionView.contentInset = UIEdgeInsets(top: 8, left: 8, bottom: 0, right: 8)
+        
         if let layout = searchResultsCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .vertical
         }
+        
         //Setup Segmanted Control
-        searchSegmentedControl.tintColor = ViewController().blueBackgroundColor
+        searchSegmentedControl.tintColor = Constants.Colors.blueBackgroundColor
         searchSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.opaqueSeparator],
                                                       for: UIControl.State.normal)
         searchSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black],

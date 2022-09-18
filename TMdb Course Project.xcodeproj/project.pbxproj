@@ -30,6 +30,7 @@
 		2396E23328702B3400FC6BF7 /* ExtensionsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2396E23228702B3400FC6BF7 /* ExtensionsColor.swift */; };
 		23CEC98928970D5700C0EF22 /* RealmMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CEC98828970D5700C0EF22 /* RealmMediaModel.swift */; };
 		23CEC98B28970FF800C0EF22 /* RealmDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CEC98A28970FF800C0EF22 /* RealmDataManager.swift */; };
+		23D3D53A28D78BBF006CFCAA /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D3D53928D78BBF006CFCAA /* GlobalConstants.swift */; };
 		23E517F92879F489004ED282 /* TrendingMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E517F82879F489004ED282 /* TrendingMovie.swift */; };
 		23F4DDA32894913000848CBD /* WatchLaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F4DDA22894913000848CBD /* WatchLaterViewController.swift */; };
 		23F4DDA728949CEE00848CBD /* WatchLaterTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F4DDA628949CEE00848CBD /* WatchLaterTableViewExtension.swift */; };
@@ -57,6 +58,7 @@
 		2396E23228702B3400FC6BF7 /* ExtensionsColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsColor.swift; sourceTree = "<group>"; };
 		23CEC98828970D5700C0EF22 /* RealmMediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMediaModel.swift; sourceTree = "<group>"; };
 		23CEC98A28970FF800C0EF22 /* RealmDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataManager.swift; sourceTree = "<group>"; };
+		23D3D53928D78BBF006CFCAA /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		23E517F82879F489004ED282 /* TrendingMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMovie.swift; sourceTree = "<group>"; };
 		23F4DDA22894913000848CBD /* WatchLaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchLaterViewController.swift; sourceTree = "<group>"; };
 		23F4DDA628949CEE00848CBD /* WatchLaterTableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchLaterTableViewExtension.swift; sourceTree = "<group>"; };
@@ -94,7 +96,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		232D30F6288C4E4A00329A8C /* View Controllers */ = {
+		232D30F6288C4E4A00329A8C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				2308AD452886AAFB00EE3867 /* DetailMediaViewController.swift */,
@@ -102,7 +104,7 @@
 				236FB592286B8980004D6543 /* ViewController.swift */,
 				23F4DDA22894913000848CBD /* WatchLaterViewController.swift */,
 			);
-			path = "View Controllers";
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		232FEF8728948F2200A0CBC7 /* RealmDB */ = {
@@ -114,10 +116,19 @@
 			path = RealmDB;
 			sourceTree = "<group>";
 		};
+		235C3A7028D5021800034164 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				236FB594286B8980004D6543 /* Main.storyboard */,
+				236BC38B2871EB4800FF296D /* MainScreenTableViewCell.xib */,
+				236FB599286B8982004D6543 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		236BC38E2871EB5A00FF296D /* Сells */ = {
 			isa = PBXGroup;
 			children = (
-				236BC38B2871EB4800FF296D /* MainScreenTableViewCell.xib */,
 				236BC38A2871EB4800FF296D /* MainScreenTableViewCell.swift */,
 				232D30F2288C43E400329A8C /* SearchResultCollectionViewCell.swift */,
 			);
@@ -152,17 +163,17 @@
 		236FB58D286B8980004D6543 /* TMdb Course Project */ = {
 			isa = PBXGroup;
 			children = (
-				236FB58E286B8980004D6543 /* AppDelegate.swift */,
-				236FB590286B8980004D6543 /* SceneDelegate.swift */,
 				232FEF8728948F2200A0CBC7 /* RealmDB */,
 				236BC391287208E100FF296D /* API */,
 				236BC38E2871EB5A00FF296D /* Сells */,
 				2396E23428702B3E00FC6BF7 /* Extension */,
-				232D30F6288C4E4A00329A8C /* View Controllers */,
-				236FB594286B8980004D6543 /* Main.storyboard */,
-				236FB597286B8982004D6543 /* Assets.xcassets */,
-				236FB599286B8982004D6543 /* LaunchScreen.storyboard */,
+				232D30F6288C4E4A00329A8C /* Controller */,
+				235C3A7028D5021800034164 /* View */,
 				236FB59C286B8982004D6543 /* Info.plist */,
+				236FB597286B8982004D6543 /* Assets.xcassets */,
+				236FB590286B8980004D6543 /* SceneDelegate.swift */,
+				236FB58E286B8980004D6543 /* AppDelegate.swift */,
+				23D3D53928D78BBF006CFCAA /* GlobalConstants.swift */,
 			);
 			path = "TMdb Course Project";
 			sourceTree = "<group>";
@@ -263,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23F4DDA728949CEE00848CBD /* WatchLaterTableViewExtension.swift in Sources */,
+				23D3D53A28D78BBF006CFCAA /* GlobalConstants.swift in Sources */,
 				2321D8F02889DC220039BBAD /* SearchViewController.swift in Sources */,
 				232D30F5288C4B0F00329A8C /* SearchResultCollectionViewExtension.swift in Sources */,
 				2308AD462886AAFB00EE3867 /* DetailMediaViewController.swift in Sources */,

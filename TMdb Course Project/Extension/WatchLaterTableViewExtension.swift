@@ -16,12 +16,10 @@ extension WatchLaterViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let nibName = "MainScreenTableViewCell"
-        let nib = UINib(nibName: nibName, bundle: nil)
-        let identifire = "MainScreenTableViewCell"
-        tableView.register(nib, forCellReuseIdentifier: identifire)
+       
+        tableView.register(Constants.mainScreenTableViewCellNib, forCellReuseIdentifier: Constants.mainScreenTableViewCellIdentifier)
         
-        if let cell  = tableView.dequeueReusableCell(withIdentifier: identifire)
+        if let cell  = tableView.dequeueReusableCell(withIdentifier: Constants.mainScreenTableViewCellIdentifier)
             as? MainScreenTableViewCell {
             let item = moviesArray[indexPath.row]
             cell.configure(withModelDB: item)
@@ -29,20 +27,19 @@ extension WatchLaterViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return UITableViewCell()
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = moviesArray[indexPath.row]
-        let main = UIStoryboard(name: "Main", bundle: nil)
-        let identifier = "DetailViewControllerID"
-        if let detailsStoryboard = main.instantiateViewController(withIdentifier: identifier) as?
+        
+        if let detailsStoryboard = Constants.storyboardName.instantiateViewController(withIdentifier: Constants.detailViewContrillerIdentifier) as?
             DetailMediaViewController {
-            let responseURL = "https://image.tmdb.org/t/p/w1280/"
+            
             let posterPath = item.posterPath
-            guard let imageURL: URL = URL(string: responseURL + posterPath) else { return }
+            guard let imageURL: URL = URL(string: Constants.imageURLpath + posterPath) else { return }
             detailsStoryboard.filmName = item.name
             detailsStoryboard.filmDescription = item.mediaDescription
             detailsStoryboard.filmPoster = imageURL
             detailsStoryboard.filmData = "Realese date: " + item.releaseDate
-            detailsStoryboard.mediaDeleteFromRealm = item
             detailsStoryboard.isFromNetwork = false
             
             if item.rating == 0.0 {
@@ -69,6 +66,7 @@ extension WatchLaterViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
     }

@@ -15,9 +15,10 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let identifier = "SearchResultCollectionViewCell"
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier , for: indexPath) as? SearchResultCollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.searResultCellIdentifier , for: indexPath) as? SearchResultCollectionViewCell {
+            
             let item = searchResult[indexPath.item]
+            
             switch searchSegmentedControl.selectedSegmentIndex {
             case 0:
                 cell.configure(withModelMovie: item)
@@ -51,54 +52,46 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let size = CGSize(width: widthCell, height: height)
         return size
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = searchResult[indexPath.row]
-        let main = UIStoryboard(name: "Main", bundle: nil)
-        let identifier = "DetailViewControllerID"
-        if let detailsStoryboard = main.instantiateViewController(withIdentifier: identifier) as?
+        
+        if let detailsStoryboard = Constants.storyboardName.instantiateViewController(withIdentifier: Constants.detailViewContrillerIdentifier) as?
             DetailMediaViewController {
-            let responseURL = "https://image.tmdb.org/t/p/w1280/"
+            
+            
             guard let posterPath = item.posterPath else { return }
-            guard let imageURL: URL = URL(string: responseURL + posterPath) else { return }
+            guard let imageURL: URL = URL(string: Constants.imageURLpath + posterPath) else { return }
+            detailsStoryboard.isFromNetwork = true
+            detailsStoryboard.mediaRealm = item
+            detailsStoryboard.filmPoster = imageURL
+            detailsStoryboard.filmDescription = item.overview ?? "None"
+            
+            if item.voteAverage == 0.0 {
+                detailsStoryboard.filmRating = "No ratings yet"
+            } else {
+                detailsStoryboard.filmRating = "Rating: " + String(describing: Int(item.voteAverage ?? 0)) + "\\10"
+            }
             
             switch searchSegmentedControl.selectedSegmentIndex {
             case 0 :
                 detailsStoryboard.filmName = item.title ?? "None"
-                detailsStoryboard.filmDescription = item.overview ?? "None"
-                detailsStoryboard.filmPoster = imageURL
                 detailsStoryboard.filmData = "Realese date: " + (item.releaseDate ?? "No data")
-                detailsStoryboard.isFromNetwork = true
-                
-                if item.voteAverage == 0.0 {
-                    detailsStoryboard.filmRating = "No ratings yet"
-                } else {
-                    detailsStoryboard.filmRating = "Rating: " + String(describing: Int(item.voteAverage ?? 0)) + "\\10"
-                }
-                detailsStoryboard.mediaRealm = item
+         
                 ApiManager.shared.getMovieTrailer(movieID: item.id ?? 0) { trailer in
                     detailsStoryboard.filmTrailer = trailer.results?.first?.key ?? ""
                     DispatchQueue.main.async {
                         self.navigationController?.pushViewController(detailsStoryboard, animated: true)
-                        
                     }
                 }
             case 1:
-                detailsStoryboard.filmName = item.originalName ?? "None"
-                detailsStoryboard.filmDescription = item.overview ?? "None"
+                detailsStoryboard.filmName = item.name ?? "None"
                 detailsStoryboard.filmData = "Realese date: " + (item.firstAirDate ?? "No data")
-                detailsStoryboard.isFromNetwork = true
-                if item.voteAverage == 0.0 {
-                    detailsStoryboard.filmRating = "No ratings yet"
-                } else {
-                    detailsStoryboard.filmRating = "Rating: " + String(describing: Int(item.voteAverage ?? 0)) + "\\10"
-                }
-                detailsStoryboard.mediaRealm = item
-                detailsStoryboard.filmPoster = imageURL
+               
                 ApiManager.shared.getTVtrailer(TVid: item.id ?? 0) { trailer in
                     detailsStoryboard.filmTrailer = trailer.results?.first?.key ?? ""
                     DispatchQueue.main.async {
                         self.navigationController?.pushViewController(detailsStoryboard, animated: true)
-                        
                     }
                 }
             default:

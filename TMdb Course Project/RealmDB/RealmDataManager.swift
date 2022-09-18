@@ -10,6 +10,7 @@ import RealmSwift
 
 struct DataManager {
     private let realm = try? Realm()
+    
     func saveMedia(with model: Result?) {
         var mediaRealm = Media()
         mediaRealm.name = model?.title ?? model?.name ?? "No name"
@@ -24,18 +25,23 @@ struct DataManager {
             realm?.add(mediaRealm)
         }
     }
+    
     func getMedia() -> [Media] {
         var media = [Media]()
         guard let mediaResults = realm?.objects(Media.self) else { return [] }
+        
         for item in mediaResults {
             media.append(item)
         }
+        
         return media
     }
+    
     func deleteMedia(toDelete: Media){
         try! realm?.write {
             realm?.delete(toDelete)
         }
     }
+    
 }
 
