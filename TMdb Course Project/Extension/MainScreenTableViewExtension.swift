@@ -43,7 +43,6 @@ extension ViewController: UITableViewDataSource {
             guard let posterPath = item.posterPath else { return }
             guard let imageURL: URL = URL(string: Constants.imageURLpath + posterPath) else { return }
             
-            detailsStoryboard.isFromNetwork = true
             detailsStoryboard.filmPoster = imageURL
             detailsStoryboard.filmDescription = item.overview ?? "None"
             detailsStoryboard.mediaRealm = item

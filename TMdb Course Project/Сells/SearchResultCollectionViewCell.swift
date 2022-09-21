@@ -33,5 +33,6 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         self.movieNameLabel.text = nil
         self.moviePoster.image = nil
+        self.mediaTypeLabel.text = nil
     }
 }

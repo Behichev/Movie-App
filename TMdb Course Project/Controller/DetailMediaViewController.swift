@@ -27,13 +27,12 @@ class DetailMediaViewController: UIViewController {
     var filmData = ""
     var filmRating = ""
     var filmTrailer = ""
-    var isFromNetwork: Bool?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupColors()
         setupContent()
-        //View with media trailer
         playerView.load(withVideoId: filmTrailer, playerVars: ["playinline":1])
     }
     
@@ -43,26 +42,27 @@ class DetailMediaViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        switch isFromNetwork {
-        case true:
-            saveMedia()
-        case false:
-            deleteMedia()
-        default:
-            break
-        }
+       
+        let objects = DataManager().getMedia()
         
+        if objects.isEmpty {
+            saveMedia()
+        } else if addToWatchLaterListButton.titleLabel?.text == "Remove" {
+            deleteMedia()
+        } else {
+            for object in objects {
+                if object.name == filmName {
+                    showAlreadySavedAlert()
+                } else {
+                    saveMedia()
+                }
+            }
+        }
+    
     }
     //MARK: - Functions
-    func showSaveMovieAlert() {
-        let alert = UIAlertController(title: "Saved", message: "You have successfully saved the movie", preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default) { _ in }
-        alert.addAction(action)
-        present(alert, animated: true)
-    }
-    
-    func showSaveTvAlert() {
-        let alert = UIAlertController(title: "Saved", message: "You have successfully saved TV", preferredStyle: .alert)
+    func showSaveMediaAlert() {
+        let alert = UIAlertController(title: "Saved", message: "You have successfully saved to your watch later list", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default) { _ in }
         alert.addAction(action)
         present(alert, animated: true)
@@ -85,20 +85,15 @@ class DetailMediaViewController: UIViewController {
     func saveMedia() {
         if let movie = mediaRealm {
             DataManager().saveMedia(with: mediaRealm)
-            if movie.mediaType?.rawValue == Optional("movie") {
-                showSaveMovieAlert()
-            } else {
-                showSaveTvAlert()
-            }
+            showSaveMediaAlert()
         }
     }
     
     func deleteMedia() {
-        let movies = DataManager().getMedia()
-        
-        for movie in movies {
-            if movie.name == filmName {
-                DataManager().deleteMedia(toDelete: movie)
+        let objects = DataManager().getMedia()
+        for object in objects {
+            if object.name == filmName {
+                DataManager().deleteMedia(object: object)
                 showDeleteAlert()
             }
         }
@@ -108,9 +103,10 @@ class DetailMediaViewController: UIViewController {
         let movies = DataManager().getMedia()
         
         for movie in movies {
-            if movie.name == filmName && isFromNetwork == false {
+            if movie.name == filmName {
                 addToWatchLaterListButton.titleLabel?.text = "Remove"
             }
+            
         }
     }
     

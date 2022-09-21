@@ -8,14 +8,15 @@
 import Foundation
 import RealmSwift
 
+@objcMembers
 class Media: Object {
-    @objc dynamic var name = ""
-    @objc dynamic var releaseDate = ""
-    @objc dynamic var mediaDescription = ""
-    @objc dynamic var rating = 0.0
-    @objc dynamic var posterPath = ""
-    @objc dynamic var id = 0
-    @objc dynamic var mediaRaw = MediaType.movie.rawValue
+    dynamic var name = ""
+    dynamic var releaseDate = ""
+    dynamic var mediaDescription = ""
+    dynamic var rating = 0.0
+    dynamic var posterPath = ""
+    dynamic var id = 0
+    dynamic var mediaRaw = MediaType.movie.rawValue
     
     var media: MediaType {
         get {
@@ -28,4 +29,9 @@ class Media: Object {
             mediaRaw = newValue.rawValue 
         }
     }
+    
+    override class func primaryKey() -> String? {
+        return #keyPath(id)
+    }
+    
 }

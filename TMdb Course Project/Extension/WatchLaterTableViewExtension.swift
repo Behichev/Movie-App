@@ -40,7 +40,7 @@ extension WatchLaterViewController: UITableViewDataSource, UITableViewDelegate {
             detailsStoryboard.filmDescription = item.mediaDescription
             detailsStoryboard.filmPoster = imageURL
             detailsStoryboard.filmData = "Realese date: " + item.releaseDate
-            detailsStoryboard.isFromNetwork = false
+
             
             if item.rating == 0.0 {
                 detailsStoryboard.filmRating = "No ratings yet"

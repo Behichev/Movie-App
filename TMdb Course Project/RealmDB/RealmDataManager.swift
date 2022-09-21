@@ -8,11 +8,24 @@
 import Foundation
 import RealmSwift
 
-struct DataManager {
-    private let realm = try? Realm()
+class DataManager {
+    
+    fileprivate lazy var mainRealm: Realm = {
+        let config = Realm.Configuration(
+            schemaVersion: 0,
+            migrationBlock: { migration, oldSchemaVersion in
+                if oldSchemaVersion < 1 {
+                }
+            })
+         Realm.Configuration.defaultConfiguration = config
+        return try! Realm(configuration: .defaultConfiguration)
+    }()
+    
     
     func saveMedia(with model: Result?) {
+        
         var mediaRealm = Media()
+        
         mediaRealm.name = model?.title ?? model?.name ?? "No name"
         mediaRealm.id = model?.id ?? 0
         mediaRealm.posterPath = model?.posterPath ?? ""
@@ -20,26 +33,27 @@ struct DataManager {
         mediaRealm.mediaDescription = model?.overview ?? "No data"
         mediaRealm.rating = model?.voteAverage ?? 0.0
         mediaRealm.mediaRaw = model?.mediaType?.rawValue ?? ""
-        //Writing media in realm
-        try? realm?.write {
-            realm?.add(mediaRealm)
+        
+        try! mainRealm.write {
+            
+            mainRealm.add(mediaRealm, update: .modified)
+            
         }
     }
     
     func getMedia() -> [Media] {
-        var media = [Media]()
-        guard let mediaResults = realm?.objects(Media.self) else { return [] }
         
-        for item in mediaResults {
-            media.append(item)
-        }
+        let mediaResults = mainRealm.objects(Media.self)
         
-        return media
+        return Array(mediaResults)
     }
     
-    func deleteMedia(toDelete: Media){
-        try! realm?.write {
-            realm?.delete(toDelete)
+    func deleteMedia(object: Object){
+        
+        try! mainRealm.write {
+            
+            mainRealm.delete(object)
+            
         }
     }
     
