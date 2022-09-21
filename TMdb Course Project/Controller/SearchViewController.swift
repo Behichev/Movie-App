@@ -18,6 +18,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupInterface()
+        hideKeyboardWhenTappedAround()
     }
     //MARK: - Functions
     private func setupInterface() {
@@ -48,6 +49,7 @@ class SearchViewController: UIViewController {
         searchSegmentedControl.setTitle("Movies", forSegmentAt: 0)
         searchSegmentedControl.setTitle("TV", forSegmentAt: 1)
     }
+    
 }
 
 
