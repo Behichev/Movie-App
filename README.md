@@ -7,7 +7,7 @@ I used:
 - [SDWebImage](https://github.com/SDWebImage/SDWebImage) for caching images
 - [YouTube iOS Helper player](https://github.com/youtube/youtube-ios-player-helper) for trailers.
 
-![image](https://user-images.githubusercontent.com/99028430/191952069-c54f6ab4-38a3-462d-b2e2-ea92c5be5d12.png)
+![image](https://user-images.githubusercontent.com/99028430/191952465-d1e38ec8-e857-4256-8c3b-90bdabfa51f9.png)
 
 
 
