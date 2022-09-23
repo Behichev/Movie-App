@@ -8,6 +8,7 @@ I used:
 - [YouTube iOS Helper player](https://github.com/youtube/youtube-ios-player-helper) for trailers.
 
 
-![image](https://user-images.githubusercontent.com/99028430/191611700-4b54c828-a6a3-4eac-8547-75546cc6e5d6.png)
+![image](https://user-images.githubusercontent.com/99028430/191950786-064c8c88-f480-414d-b229-216fe484ebee.png)
+
 
 
