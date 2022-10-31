@@ -1,6 +1,6 @@
 # Movie-App
 
-My small app is based on [TMDb API](https://developers.themoviedb.org/3), in here you can add the newest films or TVs to your favorite list, and search media in the big TMDb library. 
+My small app is based on [TMDb API](https://developers.themoviedb.org/3), in here you can add the newest films or TV's to your favorite list, and search media in the big TMDb library. 
 
 I used:
 - [Realm](https://github.com/realm/realm-swift) for saving data
