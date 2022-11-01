@@ -10,10 +10,10 @@ import UIKit
 class SearchViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var searchResultsCollectionView: UICollectionView!
-    @IBOutlet weak var searchSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var searchTypeSegmentedControl: UISegmentedControl!
     //MARK: - Data
     let searchController = UISearchController()
-    var searchResult: [Result] = []
+    var searchResult: [Media] = []
     //MARK: - View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +30,11 @@ class SearchViewController: UIViewController {
         searchResultsCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
         //Setup Search Controller
         navigationItem.searchController = searchController
-        navigationItem.searchController?.searchBar.tintColor = .systemYellow
+        searchController.searchBar.tintColor = UIColor(.yellow)
         searchController.searchBar.searchTextField.textColor = .white
+        searchController.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Search",
+                                                                                              attributes: [NSAttributedString.Key.foregroundColor : (UIColor.lightGray)])
+        searchController.searchBar.searchTextField.leftView?.tintColor = .lightGray
         //setup Collection View
         searchResultsCollectionView.backgroundColor = Constants.Colors.blueBackgroundColor
         searchResultsCollectionView.contentInset = UIEdgeInsets(top: 8, left: 8, bottom: 0, right: 8)
@@ -41,13 +44,13 @@ class SearchViewController: UIViewController {
         }
         
         //Setup Segmanted Control
-        searchSegmentedControl.tintColor = Constants.Colors.blueBackgroundColor
-        searchSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.opaqueSeparator],
+        searchTypeSegmentedControl.tintColor = Constants.Colors.blueBackgroundColor
+        searchTypeSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.opaqueSeparator],
                                                       for: UIControl.State.normal)
-        searchSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black],
+        searchTypeSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black],
                                                       for: UIControl.State.selected)
-        searchSegmentedControl.setTitle("Movies", forSegmentAt: 0)
-        searchSegmentedControl.setTitle("TV", forSegmentAt: 1)
+        searchTypeSegmentedControl.setTitle("Movies", forSegmentAt: 0)
+        searchTypeSegmentedControl.setTitle("TV", forSegmentAt: 1)
     }
     
 }

@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 @objcMembers
-class Media: Object {
+class DatabaseMediaModel: Object {
     dynamic var name = ""
     dynamic var releaseDate = ""
     dynamic var mediaDescription = ""

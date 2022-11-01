@@ -2,7 +2,7 @@ import Foundation
 
 struct TrandingMovies: Codable {
     let page: Int?
-    let results: [Result]?
+    let results: [Media]?
     let totalPages, totalResults: Int?
     
     enum CodingKeys: String, CodingKey {
@@ -12,7 +12,7 @@ struct TrandingMovies: Codable {
     }
 }
 // MARK: - Result
-struct Result: Codable {
+struct Media: Codable {
     let adult: Bool?
     let backdropPath: String?
     let id: Int?

@@ -21,7 +21,7 @@ extension ViewController: UITableViewDataSource {
             
             let item = arrayMovies[indexPath.row]
             cell.configureCell(withModel: item)
-
+            
             return cell
         }
         return UITableViewCell()
@@ -56,7 +56,6 @@ extension ViewController: UITableViewDataSource {
                         self.navigationController?.pushViewController(detailsStoryboard, animated: true)
                     }
                 }
-                
             case 1:
                 ApiManager.shared.getTVtrailer(TVid: item.id ?? 0) { trailer in
                     detailsStoryboard.mediaTrailerID = trailer.results?.first?.key ?? ""
@@ -70,6 +69,7 @@ extension ViewController: UITableViewDataSource {
             
         }
     }
+    
 }
 
 extension ViewController: UITableViewDelegate {

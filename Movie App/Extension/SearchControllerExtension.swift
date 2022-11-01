@@ -13,7 +13,7 @@ extension SearchViewController: UISearchControllerDelegate, UISearchResultsUpdat
         guard let text = searchController.searchBar.text?.lowercased().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             return
         }
-        if searchSegmentedControl.selectedSegmentIndex == 0 {
+        if searchTypeSegmentedControl.selectedSegmentIndex == 0 {
             ApiManager.shared.searchMovie(search: text.replacingOccurrences(of: " ", with: "%20")) { TrandingMovies in
                 self.searchResult = TrandingMovies.results ?? []
                 DispatchQueue.main.async {

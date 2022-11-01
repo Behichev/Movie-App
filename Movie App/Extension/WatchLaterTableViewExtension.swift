@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 extension WatchLaterViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

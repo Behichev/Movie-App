@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableViewMain: UITableView!
     @IBOutlet weak var navBar: UINavigationItem!
     //MARK: - Data
-    var arrayMovies: [Result] = []
+    var arrayMovies: [Media] = []
     //MARK: - ViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()

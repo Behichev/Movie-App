@@ -23,7 +23,7 @@ class MainScreenTableViewCell: UITableViewCell {
         setupUI()
     }
     //MARK: DB Movie Cell
-    func configureCell(withModelDB dbFile: Media) {
+    func configureCell(withModelDB dbFile: DatabaseMediaModel) {
         self.mediaTitleLabel.text = dbFile.name
         self.movieReleaseDataLabel.text = "Release date: " + dbFile.releaseDate
         if dbFile.rating == 0.0 {
@@ -38,7 +38,7 @@ class MainScreenTableViewCell: UITableViewCell {
         mediaPosterImageView.layer.cornerRadius = 8
     }
     //MARK: Movie Table Cell
-    func configureCell(withModel model: Result) {
+    func configureCell(withModel model: Media) {
         self.mediaTitleLabel.text = model.title
         
         if model.releaseDate != nil {

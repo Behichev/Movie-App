@@ -22,9 +22,9 @@ class DataManager {
     }()
     
     
-    func saveMedia(with model: Result?) {
+    func saveMedia(with model: Media?) {
         
-        var mediaRealm = Media()
+        var mediaRealm = DatabaseMediaModel()
         
         mediaRealm.name = model?.title ?? model?.name ?? "No name"
         mediaRealm.id = model?.id ?? 0
@@ -41,9 +41,9 @@ class DataManager {
         }
     }
     
-    func getMedia() -> [Media] {
+    func getMedia() -> [DatabaseMediaModel] {
         
-        let mediaResults = mainRealm.objects(Media.self)
+        let mediaResults = mainRealm.objects(DatabaseMediaModel.self)
         
         return Array(mediaResults)
     }

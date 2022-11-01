@@ -9,16 +9,21 @@ import UIKit
 
 class WatchLaterViewController: UIViewController {
     //MARK: - Data
-    var moviesArray: [Media] = []
+    var moviesArray: [DatabaseMediaModel] = []
     //MARK: - Outlets
+    @IBOutlet weak var wacthLaterEmptyPlugVIew: UIView!
     @IBOutlet weak var watchLaterTableView: UITableView!
     //MARK: - ViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupInterface()
+        setupUI()
+        updateUI()
+        fetchResult()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         fetchResult()
+        updateUI()
     }
     //MARK: - Functions
     func fetchResult() {
@@ -26,7 +31,7 @@ class WatchLaterViewController: UIViewController {
         watchLaterTableView.reloadData()
     }
     
-    private func setupInterface() {
+    private func setupUI() {
         //register protocols
         watchLaterTableView.delegate = self
         watchLaterTableView.dataSource = self
@@ -36,6 +41,14 @@ class WatchLaterViewController: UIViewController {
         watchLaterTableView.backgroundColor = Constants.Colors.blueBackgroundColor
         watchLaterTableView.showsVerticalScrollIndicator = false
     }
+    func updateUI() {
+        if moviesArray.isEmpty {
+            wacthLaterEmptyPlugVIew.isHidden = false
+        } else {
+            wacthLaterEmptyPlugVIew.isHidden = true
+        }
+    }
+
 }
 
 

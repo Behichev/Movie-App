@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, Router {
+extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         searchResult.count
@@ -66,7 +66,7 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
                     detailsStoryboard.mediaRatingGrade = "Rating: " + String(describing: Int(item.voteAverage ?? 0)) + "\\10"
                 }
                 
-                switch searchSegmentedControl.selectedSegmentIndex {
+                switch searchTypeSegmentedControl.selectedSegmentIndex {
                 case 0 :
                     ApiManager.shared.getMovieTrailer(movieID: item.id ?? 0) { trailer in
                         detailsStoryboard.mediaTrailerID = trailer.results?.first?.key ?? ""

@@ -20,7 +20,7 @@ class DetailMediaViewController: UIViewController {
     @IBOutlet weak var addToWatchLaterListButton: UIButton!
     @IBOutlet weak var scrollContentView: UIView!
     
-    var mediaRealmDataInstance: Result?
+    var mediaRealmDataInstance: Media?
     var mediaTitle = ""
     var mediaOverviewDescription = ""
     var mediaPosterPath = URL(string: "")
@@ -41,12 +41,12 @@ class DetailMediaViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-       
+        
         let objects = DataManager().getMedia()
         
         if objects.isEmpty {
             saveMedia()
-        } else if sender.currentTitle == "Remove" {
+        } else if addToWatchLaterListButton.titleLabel?.text == "Remove" {
             deleteMedia()
         } else {
             for object in objects {
@@ -57,7 +57,7 @@ class DetailMediaViewController: UIViewController {
                 }
             }
         }
-    
+        
     }
     //MARK: - Functions
     func showSaveMediaAlert() {
@@ -67,7 +67,7 @@ class DetailMediaViewController: UIViewController {
         present(alert, animated: true)
     }
     
-    func showDeleteAlert() {
+    func showDeletedAlert() {
         let alert = UIAlertController(title: "Deleted", message: "You have successfully delete from watch list", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default) { _ in }
         alert.addAction(action)
@@ -84,7 +84,7 @@ class DetailMediaViewController: UIViewController {
     func saveMedia() {
         if let movie = mediaRealmDataInstance {
             DataManager().saveMedia(with: movie)
-            showSaveMediaAlert()
+        showSaveMediaAlert()
         }
     }
     
@@ -93,8 +93,8 @@ class DetailMediaViewController: UIViewController {
         for object in objects {
             if object.name == mediaTitle {
                 DataManager().deleteMedia(object: object)
-                showDeleteAlert()
             }
+            showDeletedAlert()
         }
     }
     
