@@ -27,7 +27,7 @@ class WatchLaterViewController: UIViewController {
     }
     //MARK: - Functions
     func fetchResult() {
-        moviesArray = DataManager().getMedia()
+        moviesArray = RealmDataManager().getMedia()
         watchLaterTableView.reloadData()
     }
     

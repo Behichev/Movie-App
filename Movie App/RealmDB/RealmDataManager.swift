@@ -8,7 +8,9 @@
 import Foundation
 import RealmSwift
 
-class DataManager {
+class RealmDataManager {
+    
+    static let shared = RealmDataManager()
     
     fileprivate lazy var mainRealm: Realm = {
         let config = Realm.Configuration(
