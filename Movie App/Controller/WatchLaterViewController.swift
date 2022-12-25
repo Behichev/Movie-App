@@ -7,15 +7,22 @@
 
 import UIKit
 
-class WatchLaterViewController: UIViewController {
+final class WatchLaterViewController: UIViewController {
     //MARK: - Data
+    
     var moviesArray: [DatabaseMediaModel] = []
+    
     //MARK: - Outlets
-    @IBOutlet weak var wacthLaterEmptyPlugVIew: UIView!
+    
+    @IBOutlet weak var wacthLaterEmptyPlugView: UIView!
     @IBOutlet weak var watchLaterTableView: UITableView!
+    
     //MARK: - ViewController Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        watchLaterTableView.delegate = self
+        watchLaterTableView.dataSource = self
         setupUI()
         updateUI()
         fetchResult()
@@ -25,30 +32,79 @@ class WatchLaterViewController: UIViewController {
         fetchResult()
         updateUI()
     }
+    
     //MARK: - Functions
+    
     func fetchResult() {
         moviesArray = RealmDataManager().getMedia()
         watchLaterTableView.reloadData()
     }
     
     private func setupUI() {
-        //register protocols
-        watchLaterTableView.delegate = self
-        watchLaterTableView.dataSource = self
-        //setup colors
-        view.backgroundColor = Constants.Colors.blueBackgroundColor
+        view.backgroundColor = AppConstants.Design.Color.Primary.blueBackgroundColor
         watchLaterTableView.separatorStyle = .none
-        watchLaterTableView.backgroundColor = Constants.Colors.blueBackgroundColor
+        watchLaterTableView.backgroundColor = AppConstants.Design.Color.Primary.blueBackgroundColor
         watchLaterTableView.showsVerticalScrollIndicator = false
     }
+    
     func updateUI() {
         if moviesArray.isEmpty {
-            wacthLaterEmptyPlugVIew.isHidden = false
+            wacthLaterEmptyPlugView.isHidden = false
         } else {
-            wacthLaterEmptyPlugVIew.isHidden = true
+            wacthLaterEmptyPlugView.isHidden = true
         }
     }
-
 }
 
+//MARK: - UITableViewDataSource
+
+extension WatchLaterViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        moviesArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        tableView.register(AppConstants.Identifiers.mainScreenTableViewCellNib, forCellReuseIdentifier: AppConstants.Identifiers.mainScreenTableViewCellIdentifier)
+        
+        if let cell  = tableView.dequeueReusableCell(withIdentifier: AppConstants.Identifiers.mainScreenTableViewCellIdentifier)
+            as? MainScreenTableViewCell {
+            let item = moviesArray[indexPath.row]
+            let configuration = MainScreenCellConfiguration(title: item.name, releaseDate: item.releaseDate, mediaRating: String(describing: Int(item.rating)), mediaDescription: item.mediaDescription, posterPathURL: item.posterPath, mediaType: MediaType(rawValue: item.mediaRaw) ?? .movie)
+            cell.configure(with: configuration)
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let detailsStoryboard = AppConstants.Identifiers.storyboardName.instantiateViewController(withIdentifier: AppConstants.Identifiers.detailViewContrillerIdentifier) as?
+            DetailMediaViewController {
+            let item = moviesArray[indexPath.row]
+            let posterPath = item.posterPath
+            guard let imageURL: URL = URL(string: AppConstants.API.imageURLpath + posterPath) else { return }
+            var trailerId = ""
+            if item.mediaRaw == MediaType.movie.rawValue {
+                ApiManager.shared.getMovieTrailer(movieID: item.id) { trailer in
+                    trailerId = trailer.results?.first?.key ?? ""
+                }
+            } else {
+                ApiManager.shared.getTVtrailer(TVid: item.id) { movieTrailerModel in
+                    trailerId = movieTrailerModel.results?.first?.key ?? ""
+                }
+            }
+            let configuration = DetailsScreenConfiguration(mediaTitle: item.name, mediaOverviewDescription: item.mediaDescription, mediaPosterPath: imageURL, mediaReleaseDate: item.releaseDate, mediaRatingGrade: String(describing: Int(item.rating)), mediaTrailerID: trailerId, mediaType: MediaType.init(rawValue: item.mediaRaw) ?? .movie)
+            detailsStoryboard.configure(witch: configuration)
+            self.navigationController?.pushViewController(detailsStoryboard, animated: true)
+        }
+    }
+}
+
+//MARK: - UITableView Delegate
+
+extension WatchLaterViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
+}
 

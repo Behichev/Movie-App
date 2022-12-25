@@ -3,10 +3,10 @@
     {
       "identity" : "realm-core",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/realm/realm-core",
+      "location" : "https://github.com/realm/realm-core.git",
       "state" : {
-        "revision" : "5da7744b4056ad185c025bccf0924f17f73f7a91",
-        "version" : "12.6.0"
+        "revision" : "b77443ca7fa25407869ca537bf3ae912b1427bff",
+        "version" : "12.13.0"
       }
     },
     {
@@ -15,25 +15,7 @@
       "location" : "https://github.com/realm/realm-swift",
       "state" : {
         "branch" : "master",
-        "revision" : "a4e41b471f5ee702c63f2b81b87dc6302fe20e49"
-      }
-    },
-    {
-      "identity" : "sdwebimage",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SDWebImage/SDWebImage",
-      "state" : {
-        "revision" : "3e48cb68d8e668d146dc59c73fb98cb628616236",
-        "version" : "5.13.2"
-      }
-    },
-    {
-      "identity" : "youtube-ios-player-helper",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/youtube/youtube-ios-player-helper",
-      "state" : {
-        "revision" : "f57129cd4380ec0a74dd3a59da3270a1d653d59b",
-        "version" : "1.0.4"
+        "revision" : "cc847d103a190ea5aa3786bab67d44f3436f261f"
       }
     }
   ],

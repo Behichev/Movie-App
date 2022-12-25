@@ -11,29 +11,26 @@
 		231A27D02878C44D00F7B6B8 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A27CF2878C44D00F7B6B8 /* APIManager.swift */; };
 		231D315F28946A8300946D4A /* TrailerResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D315E28946A8300946D4A /* TrailerResponseModel.swift */; };
 		2321D8F02889DC220039BBAD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321D8EF2889DC220039BBAD /* SearchViewController.swift */; };
-		23264DDA28931C08005962F8 /* SearchControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23264DD928931C08005962F8 /* SearchControllerExtension.swift */; };
-		23264DE4289326DF005962F8 /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 23264DE3289326DF005962F8 /* YouTubeiOSPlayerHelper */; };
 		232D30F3288C43E400329A8C /* SearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D30F2288C43E400329A8C /* SearchResultCollectionViewCell.swift */; };
-		232D30F5288C4B0F00329A8C /* SearchResultCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D30F4288C4B0F00329A8C /* SearchResultCollectionViewExtension.swift */; };
 		232FEF8428948F0500A0CBC7 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 232FEF8328948F0500A0CBC7 /* Realm */; };
 		232FEF8628948F0500A0CBC7 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 232FEF8528948F0500A0CBC7 /* RealmSwift */; };
-		235EE5952879FC6A00106818 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 235EE5942879FC6A00106818 /* SDWebImage */; };
 		236BC38C2871EB4800FF296D /* MainScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BC38A2871EB4800FF296D /* MainScreenTableViewCell.swift */; };
 		236BC38D2871EB4800FF296D /* MainScreenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236BC38B2871EB4800FF296D /* MainScreenTableViewCell.xib */; };
-		236BC3902872024900FF296D /* MainScreenTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BC38F2872024900FF296D /* MainScreenTableViewExtension.swift */; };
 		236FB58F286B8980004D6543 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236FB58E286B8980004D6543 /* AppDelegate.swift */; };
 		236FB591286B8980004D6543 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236FB590286B8980004D6543 /* SceneDelegate.swift */; };
-		236FB593286B8980004D6543 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236FB592286B8980004D6543 /* ViewController.swift */; };
+		236FB593286B8980004D6543 /* TrandigMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236FB592286B8980004D6543 /* TrandigMediaViewController.swift */; };
 		236FB596286B8980004D6543 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236FB594286B8980004D6543 /* Main.storyboard */; };
 		236FB598286B8982004D6543 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 236FB597286B8982004D6543 /* Assets.xcassets */; };
 		236FB59B286B8982004D6543 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236FB599286B8982004D6543 /* LaunchScreen.storyboard */; };
+		2383ACE12958AF0500B68C55 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2383ACE02958AF0500B68C55 /* CacheManager.swift */; };
 		2396E23328702B3400FC6BF7 /* ExtensionsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2396E23228702B3400FC6BF7 /* ExtensionsColor.swift */; };
+		23A7830D295743640003BBEC /* DetailsScreenConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A7830C295743640003BBEC /* DetailsScreenConfiguration.swift */; };
 		23CEC98928970D5700C0EF22 /* RealmMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CEC98828970D5700C0EF22 /* RealmMediaModel.swift */; };
 		23CEC98B28970FF800C0EF22 /* RealmDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CEC98A28970FF800C0EF22 /* RealmDataManager.swift */; };
-		23D3D53A28D78BBF006CFCAA /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D3D53928D78BBF006CFCAA /* GlobalConstants.swift */; };
+		23D3D53A28D78BBF006CFCAA /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D3D53928D78BBF006CFCAA /* AppConstants.swift */; };
 		23E517F92879F489004ED282 /* TrendingMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E517F82879F489004ED282 /* TrendingMovie.swift */; };
 		23F4DDA32894913000848CBD /* WatchLaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F4DDA22894913000848CBD /* WatchLaterViewController.swift */; };
-		23F4DDA728949CEE00848CBD /* WatchLaterTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F4DDA628949CEE00848CBD /* WatchLaterTableViewExtension.swift */; };
+		23F8EAF229585D780062288A /* MainScreenCellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F8EAF129585D780062288A /* MainScreenCellConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,27 +38,26 @@
 		231A27CF2878C44D00F7B6B8 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		231D315E28946A8300946D4A /* TrailerResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerResponseModel.swift; sourceTree = "<group>"; };
 		2321D8EF2889DC220039BBAD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		23264DD928931C08005962F8 /* SearchControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchControllerExtension.swift; sourceTree = "<group>"; };
 		232D30F2288C43E400329A8C /* SearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
-		232D30F4288C4B0F00329A8C /* SearchResultCollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionViewExtension.swift; sourceTree = "<group>"; };
 		236BC38A2871EB4800FF296D /* MainScreenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenTableViewCell.swift; sourceTree = "<group>"; };
 		236BC38B2871EB4800FF296D /* MainScreenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainScreenTableViewCell.xib; sourceTree = "<group>"; };
-		236BC38F2872024900FF296D /* MainScreenTableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenTableViewExtension.swift; sourceTree = "<group>"; };
 		236FB58B286B8980004D6543 /* Movie App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		236FB58E286B8980004D6543 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		236FB590286B8980004D6543 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		236FB592286B8980004D6543 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		236FB592286B8980004D6543 /* TrandigMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrandigMediaViewController.swift; sourceTree = "<group>"; };
 		236FB595286B8980004D6543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		236FB597286B8982004D6543 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		236FB59A286B8982004D6543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		236FB59C286B8982004D6543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2383ACE02958AF0500B68C55 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		2396E23228702B3400FC6BF7 /* ExtensionsColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsColor.swift; sourceTree = "<group>"; };
+		23A7830C295743640003BBEC /* DetailsScreenConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreenConfiguration.swift; sourceTree = "<group>"; };
 		23CEC98828970D5700C0EF22 /* RealmMediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMediaModel.swift; sourceTree = "<group>"; };
 		23CEC98A28970FF800C0EF22 /* RealmDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataManager.swift; sourceTree = "<group>"; };
-		23D3D53928D78BBF006CFCAA /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		23D3D53928D78BBF006CFCAA /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		23E517F82879F489004ED282 /* TrendingMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMovie.swift; sourceTree = "<group>"; };
 		23F4DDA22894913000848CBD /* WatchLaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchLaterViewController.swift; sourceTree = "<group>"; };
-		23F4DDA628949CEE00848CBD /* WatchLaterTableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchLaterTableViewExtension.swift; sourceTree = "<group>"; };
+		23F8EAF129585D780062288A /* MainScreenCellConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCellConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +67,6 @@
 			files = (
 				232FEF8628948F0500A0CBC7 /* RealmSwift in Frameworks */,
 				232FEF8428948F0500A0CBC7 /* Realm in Frameworks */,
-				235EE5952879FC6A00106818 /* SDWebImage in Frameworks */,
-				23264DE4289326DF005962F8 /* YouTubeiOSPlayerHelper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +95,7 @@
 			children = (
 				2308AD452886AAFB00EE3867 /* DetailMediaViewController.swift */,
 				2321D8EF2889DC220039BBAD /* SearchViewController.swift */,
-				236FB592286B8980004D6543 /* ViewController.swift */,
+				236FB592286B8980004D6543 /* TrandigMediaViewController.swift */,
 				23F4DDA22894913000848CBD /* WatchLaterViewController.swift */,
 			);
 			path = Controller;
@@ -173,7 +167,10 @@
 				236FB597286B8982004D6543 /* Assets.xcassets */,
 				236FB590286B8980004D6543 /* SceneDelegate.swift */,
 				236FB58E286B8980004D6543 /* AppDelegate.swift */,
-				23D3D53928D78BBF006CFCAA /* GlobalConstants.swift */,
+				23D3D53928D78BBF006CFCAA /* AppConstants.swift */,
+				23A7830C295743640003BBEC /* DetailsScreenConfiguration.swift */,
+				23F8EAF129585D780062288A /* MainScreenCellConfiguration.swift */,
+				2383ACE02958AF0500B68C55 /* CacheManager.swift */,
 			);
 			path = "Movie App";
 			sourceTree = "<group>";
@@ -182,10 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				2396E23228702B3400FC6BF7 /* ExtensionsColor.swift */,
-				236BC38F2872024900FF296D /* MainScreenTableViewExtension.swift */,
-				232D30F4288C4B0F00329A8C /* SearchResultCollectionViewExtension.swift */,
-				23264DD928931C08005962F8 /* SearchControllerExtension.swift */,
-				23F4DDA628949CEE00848CBD /* WatchLaterTableViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -207,8 +200,6 @@
 			);
 			name = "Movie App";
 			packageProductDependencies = (
-				235EE5942879FC6A00106818 /* SDWebImage */,
-				23264DE3289326DF005962F8 /* YouTubeiOSPlayerHelper */,
 				232FEF8328948F0500A0CBC7 /* Realm */,
 				232FEF8528948F0500A0CBC7 /* RealmSwift */,
 			);
@@ -241,8 +232,6 @@
 			);
 			mainGroup = 236FB582286B8980004D6543;
 			packageReferences = (
-				235EE5932879FC6A00106818 /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				23264DE2289326DE005962F8 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */,
 				232FEF8228948F0500A0CBC7 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 236FB58C286B8980004D6543 /* Products */;
@@ -273,21 +262,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23F4DDA728949CEE00848CBD /* WatchLaterTableViewExtension.swift in Sources */,
-				23D3D53A28D78BBF006CFCAA /* GlobalConstants.swift in Sources */,
+				23D3D53A28D78BBF006CFCAA /* AppConstants.swift in Sources */,
+				23A7830D295743640003BBEC /* DetailsScreenConfiguration.swift in Sources */,
 				2321D8F02889DC220039BBAD /* SearchViewController.swift in Sources */,
-				232D30F5288C4B0F00329A8C /* SearchResultCollectionViewExtension.swift in Sources */,
+				23F8EAF229585D780062288A /* MainScreenCellConfiguration.swift in Sources */,
 				2308AD462886AAFB00EE3867 /* DetailMediaViewController.swift in Sources */,
-				236FB593286B8980004D6543 /* ViewController.swift in Sources */,
+				236FB593286B8980004D6543 /* TrandigMediaViewController.swift in Sources */,
 				231A27D02878C44D00F7B6B8 /* APIManager.swift in Sources */,
 				236FB58F286B8980004D6543 /* AppDelegate.swift in Sources */,
 				23CEC98928970D5700C0EF22 /* RealmMediaModel.swift in Sources */,
 				231D315F28946A8300946D4A /* TrailerResponseModel.swift in Sources */,
+				2383ACE12958AF0500B68C55 /* CacheManager.swift in Sources */,
 				23F4DDA32894913000848CBD /* WatchLaterViewController.swift in Sources */,
 				236BC38C2871EB4800FF296D /* MainScreenTableViewCell.swift in Sources */,
-				23264DDA28931C08005962F8 /* SearchControllerExtension.swift in Sources */,
 				236FB591286B8980004D6543 /* SceneDelegate.swift in Sources */,
-				236BC3902872024900FF296D /* MainScreenTableViewExtension.swift in Sources */,
 				2396E23328702B3400FC6BF7 /* ExtensionsColor.swift in Sources */,
 				23E517F92879F489004ED282 /* TrendingMovie.swift in Sources */,
 				232D30F3288C43E400329A8C /* SearchResultCollectionViewCell.swift in Sources */,
@@ -525,14 +513,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		23264DE2289326DE005962F8 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/youtube/youtube-ios-player-helper";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		232FEF8228948F0500A0CBC7 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift";
@@ -541,22 +521,9 @@
 				kind = branch;
 			};
 		};
-		235EE5932879FC6A00106818 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		23264DE3289326DF005962F8 /* YouTubeiOSPlayerHelper */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 23264DE2289326DE005962F8 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */;
-			productName = YouTubeiOSPlayerHelper;
-		};
 		232FEF8328948F0500A0CBC7 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 232FEF8228948F0500A0CBC7 /* XCRemoteSwiftPackageReference "realm-swift" */;
@@ -566,11 +533,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 232FEF8228948F0500A0CBC7 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
-		};
-		235EE5942879FC6A00106818 /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 235EE5932879FC6A00106818 /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
