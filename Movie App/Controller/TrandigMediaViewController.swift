@@ -26,7 +26,7 @@ final class TrandigMediaViewController: UIViewController {
         trandigMediaTableView.delegate = self
         trandigMediaTableView.dataSource = self
         setupInterface()
-        //        networkRequest()
+        networkRequest()
     }
     
     //MARK: - Functions

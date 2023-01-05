@@ -42,7 +42,7 @@ final class MainScreenTableViewCell: UITableViewCell {
         mediaRatingGradeLabel.text = "Rating: \(configuration.mediaRating)\\10"
         mediaOverviewLabel.text = configuration.mediaDescription
         if let imageURL = URL(string: AppConstants.API.imageURLpath + (configuration.posterPathURL)) {
-            cacheManager.dowlandImage(url: imageURL) { image in
+            cacheManager.downloadImage(url: imageURL) { image in
                 self.mediaPosterImageView.image = image
             }
         }

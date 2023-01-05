@@ -89,7 +89,7 @@ final class DetailMediaViewController: UIViewController {
             } else {
                 mediaReleaseDataLabel.text = "First air date: \(String(describing: configuration.mediaReleaseDate))"
             }
-            cacheManager.dowlandImage(url: configuration.mediaPosterPath, complition: { image in
+            cacheManager.downloadImage(url: configuration.mediaPosterPath, complition: { image in
                 self.filmPosterImage.image = image
             })
         }

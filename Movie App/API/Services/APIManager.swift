@@ -25,12 +25,12 @@ enum ApiType {
         case .getTrandingMovies: return "trending/movie/week?api_key=4f8afb35881a873ad0abc5c32dcfbcb1"
         case .getTrandingShows: return "trending/tv/week?api_key=4f8afb35881a873ad0abc5c32dcfbcb1"
         case .getPopularPerson: return "trending/person/week?api_key=4f8afb35881a873ad0abc5c32dcfbcb1"
-        case .searchMovie(search: let search): return "search/movie?api_key=4f8afb35881a873ad0abc5c32dcfbcb1&language=en-US&query=\(search)"
-        case .searchTV(search: let search): return
+        case .searchMovie(let search): return "search/movie?api_key=4f8afb35881a873ad0abc5c32dcfbcb1&language=en-US&query=\(search)"
+        case .searchTV(let search): return
             "search/tv?api_key=4f8afb35881a873ad0abc5c32dcfbcb1&language=en-US&query=\(search)"
-        case .getMovieTrailer(movieID: let movieID): return
+        case .getMovieTrailer(let movieID): return
             "movie/\(String(describing: movieID))/videos?api_key=4f8afb35881a873ad0abc5c32dcfbcb1&language=en-US"
-        case .getTVtrailer(TVid: let TVid): return "https://api.themoviedb.org/3/tv/\(TVid)/videos?api_key=4f8afb35881a873ad0abc5c32dcfbcb1&language=en-US"
+        case .getTVtrailer(let TVid): return "https://api.themoviedb.org/3/tv/\(TVid)/videos?api_key=4f8afb35881a873ad0abc5c32dcfbcb1&language=en-US"
         }
     }
     
