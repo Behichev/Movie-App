@@ -8,14 +8,14 @@
 import UIKit
 
 final class WatchLaterViewController: UIViewController {
-    //MARK: - Data
-    
-    var moviesArray: [DatabaseMediaModel] = []
-    
+   
     //MARK: - Outlets
+    @IBOutlet weak private var wacthLaterEmptyPlugView: UIView!
+    @IBOutlet weak private var watchLaterTableView: UITableView!
+  
+    //MARK: - Variables
+    private var moviesArray: [DatabaseMediaModel] = []
     
-    @IBOutlet weak var wacthLaterEmptyPlugView: UIView!
-    @IBOutlet weak var watchLaterTableView: UITableView!
     
     //MARK: - ViewController Lifecycle
     
@@ -34,8 +34,7 @@ final class WatchLaterViewController: UIViewController {
     }
     
     //MARK: - Functions
-    
-    func fetchResult() {
+    private func fetchResult() {
         moviesArray = RealmDataManager().getMedia()
         watchLaterTableView.reloadData()
     }
@@ -47,7 +46,7 @@ final class WatchLaterViewController: UIViewController {
         watchLaterTableView.showsVerticalScrollIndicator = false
     }
     
-    func updateUI() {
+    private func updateUI() {
         if moviesArray.isEmpty {
             wacthLaterEmptyPlugView.isHidden = false
         } else {

@@ -72,7 +72,7 @@
                                 <rect key="frame" x="0.0" y="59" width="414" height="1096"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PnC-4c-1YO" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1084"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1048.6666666666667"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ID5-si-IQA">
                                                 <rect key="frame" x="16" y="16" width="382" height="588"/>
@@ -105,9 +105,9 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQV-Zu-xBf">
-                                                <rect key="frame" x="82" y="1010" width="250" height="54"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Add to watch later" buttonSize="large">
-                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <rect key="frame" x="82" y="974.66666666666674" width="250" height="54"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Add to watch list" buttonSize="large">
+                                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <color key="baseForegroundColor" red="0.03665908054" green="0.057390570639999999" blue="0.12157570569999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <color key="baseBackgroundColor" red="1" green="0.78823529411764703" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
@@ -115,6 +115,13 @@
                                                     <action selector="saveButtonPressed:" destination="qVE-yh-lId" eventType="touchUpInside" id="MVW-qM-Gxv"/>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eob-F8-CbV">
+                                                <rect key="frame" x="16" y="755" width="382" height="203.66666666666663"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="eob-F8-CbV" secondAttribute="height" multiplier="15:8" id="M9R-sN-LQZ"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <constraints>
@@ -130,10 +137,13 @@
                                             <constraint firstItem="A8d-hj-ADt" firstAttribute="leading" secondItem="PnC-4c-1YO" secondAttribute="leading" constant="16" id="TTh-5g-Sjg"/>
                                             <constraint firstAttribute="trailing" secondItem="d6l-6c-OLi" secondAttribute="trailing" constant="16" id="TqI-lA-Ozf"/>
                                             <constraint firstItem="ID5-si-IQA" firstAttribute="leading" secondItem="PnC-4c-1YO" secondAttribute="leading" constant="16" id="bnA-qe-a1p"/>
+                                            <constraint firstItem="eob-F8-CbV" firstAttribute="leading" secondItem="PnC-4c-1YO" secondAttribute="leading" constant="16" id="cB8-bu-qTQ"/>
                                             <constraint firstAttribute="trailing" secondItem="TID-JO-YIQ" secondAttribute="trailing" constant="16" id="h6q-r6-iNQ"/>
                                             <constraint firstItem="TID-JO-YIQ" firstAttribute="leading" secondItem="PnC-4c-1YO" secondAttribute="leading" constant="16" id="q9z-8W-2LC"/>
+                                            <constraint firstAttribute="trailing" secondItem="eob-F8-CbV" secondAttribute="trailing" constant="16" id="qdz-bs-be1"/>
+                                            <constraint firstItem="eob-F8-CbV" firstAttribute="top" secondItem="d6l-6c-OLi" secondAttribute="bottom" constant="16" id="qno-6h-j6F"/>
                                             <constraint firstItem="TID-JO-YIQ" firstAttribute="top" secondItem="ID5-si-IQA" secondAttribute="bottom" constant="16" id="tG3-qJ-Prx"/>
-                                            <constraint firstItem="PQV-Zu-xBf" firstAttribute="top" secondItem="d6l-6c-OLi" secondAttribute="bottom" constant="271" id="tbE-0j-z4m"/>
+                                            <constraint firstItem="PQV-Zu-xBf" firstAttribute="top" secondItem="eob-F8-CbV" secondAttribute="bottom" constant="16" id="tIb-wf-r8O"/>
                                             <constraint firstItem="d6l-6c-OLi" firstAttribute="leading" secondItem="PnC-4c-1YO" secondAttribute="leading" constant="16" id="wNZ-N1-dg0"/>
                                             <constraint firstAttribute="trailing" secondItem="A8d-hj-ADt" secondAttribute="trailing" constant="16" id="xqo-7E-W8c"/>
                                             <constraint firstAttribute="trailing" secondItem="ZSk-I4-Xth" secondAttribute="trailing" constant="16" id="y6Y-BD-7Cl"/>
@@ -192,8 +202,8 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watch later list is empty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aY-tL-krf">
-                                        <rect key="frame" x="38.666666666666657" y="315" width="316" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                        <rect key="frame" x="24.666666666666657" y="312.66666666666669" width="343.66666666666674" height="40.666666666666686"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <color key="textColor" red="0.96477049589999997" green="0.79334312679999996" blue="0.2704004049" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>

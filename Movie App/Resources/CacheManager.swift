@@ -13,7 +13,6 @@ final class CacheManager {
     func downloadImage(url: URL, complition: @escaping (UIImage?) -> Void ) {
         
         if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
-            print("--------------------------------------------------\(cachedImage)")
             complition(cachedImage)
         } else {
             let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)

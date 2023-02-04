@@ -23,6 +23,7 @@ final class DetailMediaViewController: UIViewController {
     
     private var configuration: DetailsScreenConfiguration?
     private var cacheManager = CacheManager()
+    private var detailManager = DetailManager()
     
     //MARK: - ViewController LifeCycle
     
@@ -35,14 +36,18 @@ final class DetailMediaViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction private func saveButtonPressed(_ sender: UIButton) {
-//        let bunchOfData = RealmDataManager.shared.getMedia()
-//
-//        if bunchOfData.isEmpty {
+        if sender.currentTitle == "Remove from watch list" {
+            if let configuration {
+                detailManager.deleteMedia(with: configuration)
+                showDeletedAlert()
+                sender.setTitle("Add to watch list", for: .normal)
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+        } else {
             RealmDataManager.shared.saveMedia(with: configuration?.mediaRealmDataInstance)
             showSaveMediaAlert()
-//        } else if sender.currentTitle == "Remove" {
-//            //Do somthing for deleting
-//        }
+            sender.setTitle("Remove from watch list", for: .normal)
+        }
     }
     
     //MARK: - Functions
@@ -73,12 +78,19 @@ final class DetailMediaViewController: UIViewController {
     }
     
     private func setupUI() {
+        let fetchedObject = RealmDataManager.shared.getMedia()
+        
+        for object in fetchedObject {
+            if object.name == configuration?.mediaTitle {
+                addToWatchLaterListButton.setTitle("Remove from watch list", for: .normal)
+            }
+        }
         self.view.backgroundColor = AppConstants.Design.Color.Primary.blueBackgroundColor
         scrollContentView.backgroundColor = AppConstants.Design.Color.Primary.blueBackgroundColor
         navigationController?.navigationBar.backgroundColor = AppConstants.Design.Color.Primary.blueHeaderColor
         filmPosterImage.layer.cornerRadius = 32
     }
-    
+        
     private func setupContent() {
         if let configuration {
             filmTitleLabel.text = configuration.mediaTitle

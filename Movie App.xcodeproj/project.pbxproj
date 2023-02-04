@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2308AD462886AAFB00EE3867 /* DetailMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2308AD452886AAFB00EE3867 /* DetailMediaViewController.swift */; };
 		231A27D02878C44D00F7B6B8 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231A27CF2878C44D00F7B6B8 /* APIManager.swift */; };
+		231B99CA298EDDF800C047E4 /* DetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231B99C9298EDDF800C047E4 /* DetailManager.swift */; };
 		231D315F28946A8300946D4A /* TrailerResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D315E28946A8300946D4A /* TrailerResponseModel.swift */; };
 		2321D8F02889DC220039BBAD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2321D8EF2889DC220039BBAD /* SearchViewController.swift */; };
 		232D30F3288C43E400329A8C /* SearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D30F2288C43E400329A8C /* SearchResultCollectionViewCell.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		2308AD452886AAFB00EE3867 /* DetailMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMediaViewController.swift; sourceTree = "<group>"; };
 		231A27CF2878C44D00F7B6B8 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		231B99C9298EDDF800C047E4 /* DetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailManager.swift; sourceTree = "<group>"; };
 		231D315E28946A8300946D4A /* TrailerResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerResponseModel.swift; sourceTree = "<group>"; };
 		2321D8EF2889DC220039BBAD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		232D30F2288C43E400329A8C /* SearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				2308AD452886AAFB00EE3867 /* DetailMediaViewController.swift */,
+				231B99C9298EDDF800C047E4 /* DetailManager.swift */,
 				2321D8EF2889DC220039BBAD /* SearchViewController.swift */,
 				236FB592286B8980004D6543 /* TrandigMediaViewController.swift */,
 				23F4DDA22894913000848CBD /* WatchLaterViewController.swift */,
@@ -108,6 +111,26 @@
 				23CEC98A28970FF800C0EF22 /* RealmDataManager.swift */,
 			);
 			path = RealmDB;
+			sourceTree = "<group>";
+		};
+		2352374E298EC8E4008BCA1F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2383ACE02958AF0500B68C55 /* CacheManager.swift */,
+				23D3D53928D78BBF006CFCAA /* AppConstants.swift */,
+				236FB597286B8982004D6543 /* Assets.xcassets */,
+				236FB59C286B8982004D6543 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2352374F298EC901008BCA1F /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				23A7830C295743640003BBEC /* DetailsScreenConfiguration.swift */,
+				23F8EAF129585D780062288A /* MainScreenCellConfiguration.swift */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 		235C3A7028D5021800034164 /* View */ = {
@@ -163,14 +186,10 @@
 				2396E23428702B3E00FC6BF7 /* Extension */,
 				232D30F6288C4E4A00329A8C /* Controller */,
 				235C3A7028D5021800034164 /* View */,
-				236FB59C286B8982004D6543 /* Info.plist */,
-				236FB597286B8982004D6543 /* Assets.xcassets */,
+				2352374E298EC8E4008BCA1F /* Resources */,
+				2352374F298EC901008BCA1F /* Configuration */,
 				236FB590286B8980004D6543 /* SceneDelegate.swift */,
 				236FB58E286B8980004D6543 /* AppDelegate.swift */,
-				23D3D53928D78BBF006CFCAA /* AppConstants.swift */,
-				23A7830C295743640003BBEC /* DetailsScreenConfiguration.swift */,
-				23F8EAF129585D780062288A /* MainScreenCellConfiguration.swift */,
-				2383ACE02958AF0500B68C55 /* CacheManager.swift */,
 			);
 			path = "Movie App";
 			sourceTree = "<group>";
@@ -276,6 +295,7 @@
 				23F4DDA32894913000848CBD /* WatchLaterViewController.swift in Sources */,
 				236BC38C2871EB4800FF296D /* MainScreenTableViewCell.swift in Sources */,
 				236FB591286B8980004D6543 /* SceneDelegate.swift in Sources */,
+				231B99CA298EDDF800C047E4 /* DetailManager.swift in Sources */,
 				2396E23328702B3400FC6BF7 /* ExtensionsColor.swift in Sources */,
 				23E517F92879F489004ED282 /* TrendingMovie.swift in Sources */,
 				232D30F3288C43E400329A8C /* SearchResultCollectionViewCell.swift in Sources */,
@@ -342,6 +362,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.framework *.gch *.xcode* *.xcassets (*) CVS .svn .git .hg *.pbproj *.pbxproj";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -356,7 +377,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -403,6 +424,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.framework *.gch *.xcode* *.xcassets (*) CVS .svn .git .hg *.pbproj *.pbxproj";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -411,7 +433,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -432,7 +454,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 75DSYQ758V;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Movie App/Info.plist";
+				INFOPLIST_FILE = "Movie App/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Movie App";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -466,7 +488,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 75DSYQ758V;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Movie App/Info.plist";
+				INFOPLIST_FILE = "Movie App/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Movie App";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

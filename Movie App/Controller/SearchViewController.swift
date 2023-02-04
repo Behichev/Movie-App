@@ -17,7 +17,7 @@ final class SearchViewController: UIViewController {
     //MARK: - Variables
     
     private var searchResult: [Media] = []
-    let searchController = UISearchController()
+    private let searchController = UISearchController()
     
     //MARK: - View Controller Lifecycle
     
