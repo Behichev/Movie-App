@@ -8,7 +8,7 @@ I used:
 - Cache manager for caching images 
 - MVC Architecture 
 
-install realm woith SPM
+install realm with SPM
 
 ![image](https://user-images.githubusercontent.com/99028430/191952465-d1e38ec8-e857-4256-8c3b-90bdabfa51f9.png)
 
