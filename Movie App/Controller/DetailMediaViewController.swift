@@ -41,12 +41,14 @@ final class DetailMediaViewController: UIViewController {
                 detailManager.deleteMedia(with: configuration)
                 showDeletedAlert()
                 sender.setTitle("Add to watch list", for: .normal)
-                self.navigationController?.popToRootViewController(animated: true)
             }
         } else {
             RealmDataManager.shared.saveMedia(with: configuration?.mediaRealmDataInstance)
             showSaveMediaAlert()
             sender.setTitle("Remove from watch list", for: .normal)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+            self.navigationController?.popToRootViewController(animated: true)
         }
     }
     
@@ -90,7 +92,7 @@ final class DetailMediaViewController: UIViewController {
         navigationController?.navigationBar.backgroundColor = AppConstants.Design.Color.Primary.blueHeaderColor
         filmPosterImage.layer.cornerRadius = 32
     }
-        
+    
     private func setupContent() {
         if let configuration {
             filmTitleLabel.text = configuration.mediaTitle
