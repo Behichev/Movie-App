@@ -10,17 +10,14 @@ import UIKit
 final class SearchViewController: UIViewController {
     
     //MARK: - Outlets
-    
     @IBOutlet weak private var searchResultsCollectionView: UICollectionView!
     @IBOutlet weak private var searchTypeSegmentedControl: UISegmentedControl!
     
-    //MARK: - Variables
-    
+    //MARK: - Properties
     private var searchResult: [Media] = []
     private let searchController = UISearchController()
     
     //MARK: - View Controller Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchController.searchResultsUpdater = self
@@ -33,7 +30,6 @@ final class SearchViewController: UIViewController {
     }
     
     //MARK: - Functions
-    
     private func setupUI() {
         navigationItem.searchController = searchController
         searchController.searchBar.tintColor = UIColor(.yellow)
@@ -61,7 +57,6 @@ final class SearchViewController: UIViewController {
 
 
 //MARK: - UICollectionView Data Source
-
 extension SearchViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         searchResult.count
@@ -79,7 +74,6 @@ extension SearchViewController: UICollectionViewDataSource {
 }
 
 //MARK: - UICollectionView Delegate
-
 extension SearchViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = searchResult[indexPath.row]
@@ -113,7 +107,6 @@ extension SearchViewController: UICollectionViewDelegate {
 }
 
 //MARK: - UICollectionView Delegate Flow Layout
-
 extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         let lineSpacing: CGFloat = 8
@@ -138,7 +131,6 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
 }
 
 //MARK: - UISearchController Delegate
-
 extension SearchViewController: UISearchControllerDelegate {
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text?.lowercased().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
@@ -163,7 +155,6 @@ extension SearchViewController: UISearchControllerDelegate {
 }
 
 //MARK: - UISearchResultsUpdating
-
 extension SearchViewController: UISearchResultsUpdating {
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SearchViewController.dismissKeyboard(_:)))

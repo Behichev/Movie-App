@@ -25,7 +25,6 @@ class RealmDataManager {
     
     
     func saveMedia(with model: Media?) {
-        
         var mediaRealm = DatabaseMediaModel()
         
         mediaRealm.name = model?.title ?? model?.name ?? "No name"

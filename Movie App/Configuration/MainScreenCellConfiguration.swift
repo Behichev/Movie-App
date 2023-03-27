@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MainScreenCellConfiguration {
+struct MainScreenCellConfiguration: Equatable {
     var title: String
     var releaseDate: String
     var mediaRating: String

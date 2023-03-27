@@ -13,12 +13,11 @@ final class WatchLaterViewController: UIViewController {
     @IBOutlet weak private var wacthLaterEmptyPlugView: UIView!
     @IBOutlet weak private var watchLaterTableView: UITableView!
   
-    //MARK: - Variables
+    //MARK: - Properties
     private var moviesArray: [DatabaseMediaModel] = []
     
     
     //MARK: - ViewController Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         watchLaterTableView.delegate = self
@@ -56,7 +55,6 @@ final class WatchLaterViewController: UIViewController {
 }
 
 //MARK: - UITableViewDataSource
-
 extension WatchLaterViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -100,7 +98,6 @@ extension WatchLaterViewController: UITableViewDataSource {
 }
 
 //MARK: - UITableView Delegate
-
 extension WatchLaterViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension

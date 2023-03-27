@@ -10,17 +10,14 @@ import UIKit
 final class TrandigMediaViewController: UIViewController {
     
     //MARK: - Outlets
-    
     @IBOutlet weak private var segmentedControl: UISegmentedControl!
     @IBOutlet weak private var trandigMediaTableView: UITableView!
     @IBOutlet weak private var navBar: UINavigationItem!
     
-    //MARK: - Variables
-    
+    //MARK: - Properties
     private var arrayOfMedia: [Media] = []
     
     //MARK: - View Controller Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         trandigMediaTableView.delegate = self
@@ -30,7 +27,6 @@ final class TrandigMediaViewController: UIViewController {
     }
     
     //MARK: - Functions
-    
     private func networkRequest() {
         ApiManager.shared.getTrandingMovies { show in
             if let result = show.results {
@@ -57,7 +53,6 @@ final class TrandigMediaViewController: UIViewController {
     }
     
     //MARK: - Actions
-    
     @IBAction private func WhenSelected(_ sender: Any) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
@@ -85,7 +80,6 @@ final class TrandigMediaViewController: UIViewController {
 }
 
 //MARK: - UITableView Data Source
-
 extension TrandigMediaViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         arrayOfMedia.count
@@ -135,7 +129,6 @@ extension TrandigMediaViewController: UITableViewDataSource {
 }
 
 //MARK: - UITableView Delegate
-
 extension TrandigMediaViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension

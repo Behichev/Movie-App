@@ -283,11 +283,17 @@
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="WsA-qg-6bU">
+                                                    <rect key="frame" x="90" y="132.66666666666666" width="20" height="20"/>
+                                                    <color key="color" red="0.96477049589999997" green="0.79334312679999996" blue="0.2704004049" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="7xH-LE-E2I" firstAttribute="leading" secondItem="3ku-Te-qVl" secondAttribute="leading" id="4KI-pq-Qbr"/>
                                                 <constraint firstItem="lrr-kQ-Ps9" firstAttribute="leading" secondItem="3ku-Te-qVl" secondAttribute="leading" constant="8" id="Fih-LA-EGw"/>
                                                 <constraint firstItem="7xH-LE-E2I" firstAttribute="top" secondItem="3ku-Te-qVl" secondAttribute="top" id="R4s-JN-nzd"/>
+                                                <constraint firstItem="WsA-qg-6bU" firstAttribute="centerX" secondItem="7xH-LE-E2I" secondAttribute="centerX" id="aJG-i4-rpE"/>
+                                                <constraint firstItem="WsA-qg-6bU" firstAttribute="centerY" secondItem="7xH-LE-E2I" secondAttribute="centerY" id="bBT-lh-Pu4"/>
                                                 <constraint firstItem="8LG-uE-YAC" firstAttribute="leading" secondItem="3ku-Te-qVl" secondAttribute="leading" constant="8" id="eRi-dF-QOD"/>
                                                 <constraint firstAttribute="trailing" secondItem="7xH-LE-E2I" secondAttribute="trailing" id="pep-iV-Bpo"/>
                                                 <constraint firstAttribute="trailing" secondItem="8LG-uE-YAC" secondAttribute="trailing" constant="8" id="sfV-1s-uAB"/>
@@ -298,6 +304,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="200" height="416"/>
                                         <connections>
+                                            <outlet property="activityIndicator" destination="WsA-qg-6bU" id="lug-cp-ws5"/>
                                             <outlet property="mediaTypeLabel" destination="8LG-uE-YAC" id="OqW-1g-dXh"/>
                                             <outlet property="movieNameLabel" destination="lrr-kQ-Ps9" id="5cZ-yN-IyH"/>
                                             <outlet property="moviePoster" destination="7xH-LE-E2I" id="n9t-EQ-xME"/>

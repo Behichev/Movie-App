@@ -10,19 +10,19 @@ import UIKit
 final class MainScreenTableViewCell: UITableViewCell {
     
     //MARK: - Outlets
-    
     @IBOutlet weak private var mediaPosterImageView: UIImageView!
     @IBOutlet weak private var mediaTitleLabel: UILabel!
     @IBOutlet weak private var movieReleaseDataLabel: UILabel!
     @IBOutlet weak private var mediaRatingGradeLabel: UILabel!
     @IBOutlet weak private var mainContentViewBackground: UIView!
     @IBOutlet weak private var backgroundViewCell: UIView!
+    @IBOutlet weak private var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak private var mediaOverviewLabel: UILabel!
     
-    //MARK: - Variables
-    
+    //MARK: - Properties
     private var configuration: MainScreenCellConfiguration?
     private var cacheManager = CacheManager()
+    private var title: String?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,9 +30,9 @@ final class MainScreenTableViewCell: UITableViewCell {
     }
     
     //MARK: - Functions
-    
     func configure(with configuration: MainScreenCellConfiguration) {
         self.configuration = configuration
+        title = configuration.title
         mediaTitleLabel.text = configuration.title
         if configuration.mediaType == .movie {
             movieReleaseDataLabel.text = "Release date: \(configuration.releaseDate)"
@@ -42,8 +42,13 @@ final class MainScreenTableViewCell: UITableViewCell {
         mediaRatingGradeLabel.text = "Rating: \(configuration.mediaRating)\\10"
         mediaOverviewLabel.text = configuration.mediaDescription
         if let imageURL = URL(string: AppConstants.API.imageURLpath + (configuration.posterPathURL)) {
-            cacheManager.downloadImage(url: imageURL) { image in
-                self.mediaPosterImageView.image = image
+            cacheManager.downloadImage(url: imageURL) { [weak self] image in
+                if self?.title == configuration.title {
+                    DispatchQueue.main.async {
+                        self?.mediaPosterImageView.image = image
+                        self?.activityIndicator.stopAnimating()
+                    }
+                }
             }
         }
     }
@@ -60,5 +65,6 @@ final class MainScreenTableViewCell: UITableViewCell {
         self.movieReleaseDataLabel.text = nil
         self.mediaRatingGradeLabel.text = nil
         self.mediaOverviewLabel.text = nil
+        activityIndicator.startAnimating()
     }
 }

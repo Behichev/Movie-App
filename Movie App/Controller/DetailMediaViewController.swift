@@ -10,7 +10,6 @@ import UIKit
 final class DetailMediaViewController: UIViewController {
     
     //MARK: - Outlets
-    
     @IBOutlet weak private var filmPosterImage: UIImageView!
     @IBOutlet weak private var filmTitleLabel: UILabel!
     @IBOutlet weak private var mediaReleaseDataLabel: UILabel!
@@ -19,14 +18,12 @@ final class DetailMediaViewController: UIViewController {
     @IBOutlet weak private var addToWatchLaterListButton: UIButton!
     @IBOutlet weak private var scrollContentView: UIView!
     
-    //MARK: - Variables
-    
+    //MARK: - Properties
     private var configuration: DetailsScreenConfiguration?
     private var cacheManager = CacheManager()
     private var detailManager = DetailManager()
     
     //MARK: - ViewController LifeCycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -34,7 +31,6 @@ final class DetailMediaViewController: UIViewController {
     }
     
     //MARK: - Actions
-    
     @IBAction private func saveButtonPressed(_ sender: UIButton) {
         if sender.currentTitle == "Remove from watch list" {
             if let configuration {
@@ -53,7 +49,6 @@ final class DetailMediaViewController: UIViewController {
     }
     
     //MARK: - Functions
-    
     func configure (witch configuration: DetailsScreenConfiguration) {
         self.configuration = configuration
     }
